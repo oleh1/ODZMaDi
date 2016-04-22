@@ -1,0 +1,63 @@
+h1 {
+    color: red;
+}
+
+b { color: brown; }
+
+.home1 {
+    background-color: palegreen;
+    border-radius: 30px;
+    height: 4%;
+    width: 90%;
+    padding: 2%;
+    margin-left: 3%;
+    margin-top: 2%;
+}
+.text {
+    margin-top: -15px;
+}
+.home1_1 {
+    background-color: dodgerblue;
+    border-radius: 10px;
+    height: 20px;
+    width: 6.7%;
+    padding: 2px;
+    margin-left: 3%;
+    float: left;
+}
+.home1_2 {
+    background-color: dodgerblue;
+    border-radius: 10px;
+    height: 20px;
+    width: 5.8%;
+    padding: 2px;
+    margin-left: 15%;
+}
+
+.home2 {
+    background-color: palegreen;
+    border-radius: 30px;
+    height: 70%;
+    width: 90%;
+    padding: 2%;
+    margin-left: 3%;
+    margin-top: 1%;
+    overflow: auto;
+}
+.table_a {
+    width: 200%;
+    border: 4px outset greenyellow;
+    border-collapse: separate;
+}
+.td_a {
+    border: 1px outset greenyellow;
+    width: auto;
+}
+
+.table_b {
+    border: 4px outset greenyellow;
+    border-collapse: separate;
+}
+.td_b {
+    border: 1px outset greenyellow;
+}
