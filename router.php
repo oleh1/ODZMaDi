@@ -9,6 +9,7 @@ class router
         "/addDb1" =>               ['controller' => "Student", 'action' => 'addDb1'],
         "/data_all" =>             ['controller' => "Student", 'action' => 'data_all'],
         "/clear" =>             ['controller' => "Student", 'action' => 'clear'],
+        "/serch" =>             ['controller' => "Student", 'action' => 'serch'],
 
         ];
         

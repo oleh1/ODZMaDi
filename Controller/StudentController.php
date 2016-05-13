@@ -34,6 +34,15 @@ class StudentController extends StudentsDb
         return $this->clear_all();
     }
 
+    public function serch()
+    {
+        $data = [
+            'serch'=>$this->serch1(),
+        ];
+
+        return $this->requireToVar('View/serch.php', $data);
+    }
+
     private function requireToVar($file, $data = []){
         ob_start();
         extract($data);

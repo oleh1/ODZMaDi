@@ -90,6 +90,9 @@
 
 
 <h1>Додати студента в базу даних</h1>
+<?php if(isset($_GET['no'])): ?>
+<font color="red">Такий номер залікової книжки вже існує</font>
+    <?php endif ?>
 <form action="addDb1" method="POST">
     <table>
         <tr align="center">

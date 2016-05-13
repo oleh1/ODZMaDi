@@ -8,6 +8,7 @@ class StudentsDb
     public $name = 'name';
     public $data_all;
     public $gpa_all;
+    public $serch;
 
     public function __construct()
     {
@@ -21,6 +22,16 @@ class StudentsDb
     public function addDB2()
     {
         $dd = new baza();
+
+        if(!isset($_GET['id'])) {
+            $i = "SELECT * FROM $this->name WHERE id_name='{$_POST['id']}'";
+            $i1 = mysqli_query($dd->getMysqli(), $i);
+            $i2 = $i1->fetch_array();
+            if ($i2['id_name'] != null) {
+                header("Location: add?no=no");
+                die;
+            }
+        }
 
         $i1 = '<strong>Оцінка по шкалі ECTS</strong><br>';
         $i2 = '<strong>Національна оцінка</strong><br>';
@@ -125,6 +136,15 @@ class StudentsDb
 
         header("Location: data_all");
         die;
+    }
+
+    public function serch1()
+    {
+        $dd = new baza();
+
+        $serch = "SELECT * FROM $this->name n JOIN h1 h1 ON n.id_name = h1.id_h1_name JOIN h2 h2 ON h1.id_h1 = h2.id_h2_h1 JOIN h3 h3 ON h3.id_h3_h2 = h2.id_h2 JOIN h4 h4 ON h4.id_h4_h3 = h3.id_h3 JOIN h5 h5 ON h5.id_h5_h4 = h4.id_h4 JOIN GPA g ON g.id = h5.id_h5 WHERE n.name='{$_POST['serch']}'";
+        return $this->serch = mysqli_query($dd->getMysqli(), $serch);
+
     }
 
 }

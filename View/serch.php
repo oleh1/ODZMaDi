@@ -1,5 +1,5 @@
 <form action="serch" method="POST">
-<input size="20" name="serch" type="text" style="
+    <input size="20" name="serch" type="text" style="
 border: 2px outset greenyellow;
 padding: 5px 2px 5px 30px;
 background: url(&quot;http://1.bp.blogspot.com/_hljKDuw-cxQ/SDEJPIeJG2I/AAAAAAAAGaM/N_Lu4sxLH_4/s00/lpDemoBuscador.gif&quot;) no-repeat scroll 5% 50% palegreen;
@@ -19,49 +19,49 @@ background: url(&quot;http://1.bp.blogspot.com/_hljKDuw-cxQ/SDEJPIeJG2I/AAAAAAAA
     <th class="td_b">Іноземна мова</th>
     <th class="td_b">Середній бал</th>
 
-               <?php while($a = $data_all->fetch_array()): $gh1=0; $gh2=0; $gh3=0; $gh4=0; $gh5=0 ?>
-            <?php $q = $a['id_name']; ?>
-            <tr>
-                <td align="center" class="td_b"><?= $a['id_name'] ?></td>
-                <td align="center" class="td_b"><?= $a['name'] ?></td>
-                <td align="center" class="td_b"><?= $a['h1'] ?></td>
-                <td align="center" class="td_b"><?= $a['h2'] ?></td>
-                <td align="center" class="td_b"><?= $a['h3'] ?></td>
-                <td align="center" class="td_b"><?= $a['h4'] ?></td>
-                <td align="center" class="td_b"><?= $a['h5'] ?></td>
+    <?php while($a = $serch->fetch_array()): $gh1=0; $gh2=0; $gh3=0; $gh4=0; $gh5=0 ?>
+        <?php $q = $a['id_name']; ?>
+        <tr>
+            <td align="center" class="td_b"><?= $a['id_name'] ?></td>
+            <td align="center" class="td_b"><?= $a['name'] ?></td>
+            <td align="center" class="td_b"><?= $a['h1'] ?></td>
+            <td align="center" class="td_b"><?= $a['h2'] ?></td>
+            <td align="center" class="td_b"><?= $a['h3'] ?></td>
+            <td align="center" class="td_b"><?= $a['h4'] ?></td>
+            <td align="center" class="td_b"><?= $a['h5'] ?></td>
 
             <?php
 
-                if($a['gh1'] != 0){
-                    $gh1 = 1;
-                }
-                if($a['gh2'] != 0){
-                    $gh2 = 1;
-                }
-                if($a['gh3'] != 0){
-                    $gh3 = 1;
-                }
-                if($a['gh4'] != 0){
-                    $gh4 = 1;
-                }
-                if($a['gh5'] != 0){
-                    $gh5 = 1;
-                }
+            if($a['gh1'] != 0){
+                $gh1 = 1;
+            }
+            if($a['gh2'] != 0){
+                $gh2 = 1;
+            }
+            if($a['gh3'] != 0){
+                $gh3 = 1;
+            }
+            if($a['gh4'] != 0){
+                $gh4 = 1;
+            }
+            if($a['gh5'] != 0){
+                $gh5 = 1;
+            }
 
-                $x = $gh1 + $gh2 + $gh3 + $gh4 + $gh5;
-                $c[0] = $a['gh1'] + $a['gh2'] + $a['gh3'] + $a['gh4'] + $a['gh5'];
-                $e = array_sum($c);
-                if($x != null){ $e = $e / $x; }
+            $x = $gh1 + $gh2 + $gh3 + $gh4 + $gh5;
+            $c[0] = $a['gh1'] + $a['gh2'] + $a['gh3'] + $a['gh4'] + $a['gh5'];
+            $e = array_sum($c);
+            if($x != null){ $e = $e / $x; }
 
-                ?>
-                <td align="center" class="td_b"><?= $e ?></td>
-            </tr>
-        <?php endwhile ?>
+            ?>
+            <td align="center" class="td_b"><?= $e ?></td>
+        </tr>
+    <?php endwhile ?>
 </table>
 <?php if(isset($q)): ?>
-<form action="clear">
-    <input type="submit" value="Очистити">
-</form>
+    <form action="clear">
+        <input type="submit" value="Очистити">
+    </form>
 <?php endif ?>
 
 
